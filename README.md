@@ -30,7 +30,7 @@ Create a local Shell script (e.g., `block_heavy_files.sh`). This script does not
 # The Perfect PreToolUse Hook Return Design
 
 # Check if the input argument matches massive or specialized data file extensions
-if [[ "\(1" =~ \.(csv\vert{}dta\vert{}xlsx\vert{}parquet\vert{}feather\vert{}pkl)\) ]]; then
+if [[ "\(1" =~ \.(csv|dta|xlsx|xls|parquet|feather|sas7bdat|sav|rds|h5|hdf5|pkl|pickle|joblib|pb|onnx|pq|stata|gz|zip|tar|tar\.gz|geojson|jsonl|json)\) ]]; then
     # Use [SYSTEM BLOCK] to mimic a high-priority system prompt
     echo "[SYSTEM BLOCK] Notice: To prevent token overflow, you must use python script to read this data file. Please generate a script immediately using: 'df = pd.read_csv...; print(df.head())' and execute it via python tool."
     # Exit with a specific status code to violently kill the current tool invocation
